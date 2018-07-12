@@ -1,26 +1,26 @@
 use core::intrinsics;
 use core::panic::PanicInfo;
 
-#[lang = "start"]
-extern "C" fn start<T>(main: fn() -> T, _argc: isize, _argv: *const *const u8) -> isize
-where
-    T: Termination,
-{
-    main();
+// #[lang = "start"]
+// extern "C" fn start<T>(main: fn() -> T, _argc: isize, _argv: *const *const u8) -> isize
+// where
+//     T: Termination,
+// {
+//     main();
 
-    0
-}
+//     0
+// }
 
-#[lang = "termination"]
-pub trait Termination {
-    fn report(self) -> i32;
-}
+// #[lang = "termination"]
+// pub trait Termination {
+//     fn report(self) -> i32;
+// }
 
-impl Termination for () {
-    fn report(self) -> i32 {
-        0
-    }
-}
+// impl Termination for () {
+//     fn report(self) -> i32 {
+//         0
+//     }
+// }
 
 
 #[panic_implementation]
