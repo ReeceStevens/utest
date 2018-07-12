@@ -13,7 +13,7 @@ macro_rules! upanic {
         extern "Rust" {
             static mut __TEST_PANICKED: bool;
             fn __test_panic_fmt(args: ::core::fmt::Arguments,
-                                file: &'static str,
+                                file: &str,
                                 line: u32);
         }
         unsafe {
